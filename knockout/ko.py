@@ -1,7 +1,8 @@
 import inspect
 
 from django.template.loader import render_to_string
-from django.core import urlresolvers
+from django.urls import reverse
+from django.urls.exceptions import NoReverseMatch
 
 from knockout import settings, utils
 
@@ -39,8 +40,8 @@ def _get_url(context, model_name):
 
     url_name = '{}-list'.format(l_model_name)
     try:
-        url = urlresolvers.reverse(url_name)
-    except urlresolvers.NoReverseMatch:
+        url = reverse(url_name)
+    except NoReverseMatch:
         if not context:
             raise Exception(
                 'Please provide full context or pass an url to django-knockout'
@@ -55,8 +56,8 @@ def _get_url(context, model_name):
             context['request'].resolver_match.app_name, l_model_name
         )
         try:
-            url = urlresolvers.reverse(app_url_name)
-        except urlresolvers.NoReverseMatch:
+            url = reverse(app_url_name)
+        except NoReverseMatch:
             raise Exception(
                 'Reverse for {} and Reverse for {} not found. '
                 'Please setup Django Rest Framework or '

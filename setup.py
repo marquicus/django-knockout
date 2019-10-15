@@ -10,7 +10,7 @@ os.chdir(path.normpath(path.join(path.abspath(__file__), os.pardir)))
 
 setuptools.setup(
     name='django-knockout',
-    version='0.4.2',  # major.minor[.patch]
+    version='0.4.3',  # major.minor[.patch]
     packages=setuptools.find_packages(),
     install_requires=['django'],
     include_package_data=True,
@@ -22,20 +22,18 @@ setuptools.setup(
     author='Rich Jones, Andrew B. Charles',
     author_email='andrew.charles@antyc.ca',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 2 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.8',
-        'Framework :: Django :: 1.9',
-        'Framework :: Django :: 1.10',
+        'Framework :: Django :: 1.11',
+        'Framework :: Django :: 2.1',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],

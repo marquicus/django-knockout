@@ -135,7 +135,7 @@ def knockout_list_utils(values):
 
 
 # Helper tag, renders data-bind attr required by knockout
-@register.assignment_tag
+@register.simple_tag
 def data_bind(field):
     if not field:
         raise Exception("data_bind tag requires an argument.")
